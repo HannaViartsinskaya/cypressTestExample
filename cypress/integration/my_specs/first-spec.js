@@ -30,7 +30,7 @@ describe('Verify Browser Stack Home Page', () => {
 
         cy.get("a[title='Sign In']").first().should('be.exist');
 
-        cy.get("a[title='Live for Team']").first().should('be.exist');
+        cy.get("a[title='Live for Teams']").first().should('be.exist');
 
     })
 
