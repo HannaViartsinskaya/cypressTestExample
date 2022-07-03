@@ -39,7 +39,7 @@ jobs:
           name: screenshots
           path: cypress/screenshots
       # video should always be generated
-      - uses: actions/upload-artifact@v1
-        with:
-          name: videos
-          path: cypress/videos
+     - uses: actions/upload-artifact@v3
+      with:
+        name: test-result-report
+        path: results/mochawesome.json
