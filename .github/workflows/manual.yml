@@ -1,6 +1,6 @@
 name: Cypress
 
-on: [push]
+on: [ push ]
 
 env:
   CI: 1 # minimal progress output
@@ -32,13 +32,9 @@ jobs:
           npx cypress verify
       - name: E2E tests
         run: npx cypress run
-      # save any error screenshots as test artifacts
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: screenshots
-          path: cypress/screenshots
-     - uses: actions/upload-artifact@v3
-      with:
-        name: test-result-report
-        path: results/mochawesome.json
+          - name: Upload test results
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                name: results
+                path: results/mochawesome.json
