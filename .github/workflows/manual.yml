@@ -32,4 +32,14 @@ jobs:
           npx cypress verify
       - name: E2E tests
         run: npx cypress run
-
+      # save any error screenshots as test artifacts
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: screenshots
+          path: cypress/screenshots
+      # video should always be generated
+      - uses: actions/upload-artifact@v1
+        with:
+          name: videos
+          path: cypress/videos
