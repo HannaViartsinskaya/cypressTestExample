@@ -30,7 +30,8 @@ jobs:
         run: |
           npm ci
           npx cypress verify
-          npm install mochawesome-merge --save-dev
+      - name: Clean reports
+        run: clean:reports
       - name: E2E tests
         run: npx cypress run
       - name: Generate HTML

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create:html:report": "marge --reportDir testreport cypress/results/*.json"
+    "create:html:report": "marge --reportDir testreport cypress/results/*.json",
+    "clean:reports": "rm -rf cypress/results/"
   },
   "author": "",
   "license": "ISC",
