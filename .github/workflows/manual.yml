@@ -32,6 +32,7 @@ jobs:
           npx cypress verify
       - name: E2E tests
         run: npx cypress run
+        npm run create:html:report
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
