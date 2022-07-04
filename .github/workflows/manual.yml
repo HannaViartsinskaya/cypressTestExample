@@ -1,6 +1,6 @@
 name: Cypress
 
-on: [push]
+on: [ push ]
 
 env:
   CI: 1 # minimal progress output
@@ -30,16 +30,15 @@ jobs:
         run: |
           npm ci
           npx cypress verify
+      - name: Clean reports
+        run: npm run clean:reports
       - name: E2E tests
         run: npx cypress run
-      # save any error screenshots as test artifacts
-      - uses: actions/upload-artifact@v1
-        if: failure()
+      - name: Generate HTML
+        run: npm run create:html:report
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
         with:
-          name: screenshots
-          path: cypress/screenshots
-      # video should always be generated
-      - uses: actions/upload-artifact@v1
-        with:
-          name: videos
-          path: cypress/videos
+          name: testreport
+          path: testreport/
