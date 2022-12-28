@@ -1,4 +1,4 @@
-name: Cypress
+name: Run E2E manually
 
 on: [workflow_dispatch]
 
