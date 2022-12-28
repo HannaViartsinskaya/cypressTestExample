@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "create:html:report": "marge --reportDir testreport cypress/results/*.json",
     "clean:reports": "rm -rf cypress/results/",
-    "smoke": "cypress run --config-file smoke.config.ts"
+    "smoke": "cypress run --config-file smoke.config.ts --headed"
   },
   "author": "",
   "license": "ISC",
