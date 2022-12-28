@@ -6,16 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create:html:report": "marge --reportDir testreport cypress/results/*.json",
-    "clean:reports": "rm -rf cypress/results/"
+    "clean:reports": "rm -rf cypress/results/",
+    "smoke": "cypress run --config-file smoke.config.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^3.8.2"
+    "@types/cypress-cucumber-preprocessor": "^4.0.1",
+    "cucumber": "^6.0.7",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-real-events": "^1.7.6",
+    "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress": "^10.4.0",
     "mocha": "^10.0.0",
     "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^4.2.1"
+    "mochawesome-merge": "^4.2.1",
+    "typescript": "^4.9.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/integration/step_definitions/**/"
   }
 }
