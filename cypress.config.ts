@@ -12,11 +12,10 @@ export const config: Cypress.ConfigOptions = {
     reportFilename: "report",
     overwrite: false,
     html: true,
-    json: true,
-    charts: true
+    json: true
   },
   video: true,
-  screenshotsFolder:"/cypress/screenshots",
+  screenshotsFolder: 'reports/screenshots',
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
