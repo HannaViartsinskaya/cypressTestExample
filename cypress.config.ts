@@ -15,8 +15,8 @@ export const config: Cypress.ConfigOptions = {
     json: true,
     charts: true
   },
-  "video": true,
-  "screenshotsFolder":"../cypress-cucumber/cypress/screenshots",
+  video: true,
+  screenshotsFolder:"/cypress/screenshots",
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
