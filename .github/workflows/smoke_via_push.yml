@@ -35,6 +35,7 @@ jobs:
       - name: E2E tests
         run: npm run cy:run
       - name: Generate HTML
+        if: always()
         run: npm run generate:report:o
       - name: Upload test results
         if: always()
