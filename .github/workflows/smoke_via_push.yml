@@ -36,7 +36,7 @@ jobs:
         run: npm run cy:run
       - name: Generate HTML
         if: always()
-        run: npm run generate:report:o
+        run: npm run generate:report
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
