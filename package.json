@@ -7,7 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "create:html:report": "marge --reportDir testreport cypress/results/*.json",
     "clean:reports": "rm -rf cypress/results/",
-    "smoke": "cypress run --config-file smoke.config.ts --headed"
+    "smoke": "cypress run --config-file smoke.config.ts --headed",
+
+
+    "merge:reports": "npm run clean:reports; npm run cy:run; mochawesome-merge cypress/reports/*.json > cypress/reports/full_report.json",
+    "report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/screenshots",
+    "generate:report": "npm run merge:reports; --reportDir testreport cypress/results/*.json; npm run report:copyScreenshots"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +21,7 @@
     "cucumber": "^6.0.7",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-real-events": "^1.7.6",
+    "mochawesome-report-generator": "^6.2.0",
     "save-dev": "^0.0.1-security"
   },
   "devDependencies": {

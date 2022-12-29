@@ -35,7 +35,7 @@ jobs:
       - name: E2E tests
         run: npm run smoke
       - name: Generate HTML
-        run: npm run create:html:report
+        run: npm run generate:report
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
