@@ -2,7 +2,7 @@ import {Given, Then} from 'cypress-cucumber-preprocessor/steps';
 import { BasePage } from './pageObjects/BasePage';
 
 Given(/^I go to Browserstack main page$/, function () {
-    cy.visit('https://www.browserstack.com/');
+    cy.visit('');
 });
 
 Then(/^Browserstack logo is visible$/, function () {
