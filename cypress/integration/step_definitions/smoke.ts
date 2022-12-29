@@ -23,3 +23,9 @@ Then(/^Menu Links are  present$/, function () {
     cy.get(BasePage.menu_link_sign_in).first().should('be.exist');
     cy.get(BasePage.menu_link_live_for_teams).first().should('be.exist');
 });
+Then(/^Header with text "([^"]*)" present$/, function (exp_header) {
+    cy.get(BasePage.header).should(
+        'have.text',
+        exp_header
+    );
+});

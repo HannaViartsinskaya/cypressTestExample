@@ -8,13 +8,15 @@ export const config: Cypress.ConfigOptions = {
   chromeWebSecurity: false,
   reporter: "mochawesome",
   reporterOptions: {
-    reportDir: "cypress/reports",
+    reportDir:"cypress/reports",
+    reportFilename: "report",
     overwrite: false,
-    html: false,
-    json: true
+    html: true,
+    json: true,
+    charts: true
   },
-  screenshotsFolder:"../cypress-cucumber/cypress/screenshots",
-  video: false,
+  "video": true,
+  "screenshotsFolder":"../cypress-cucumber/cypress/screenshots",
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
