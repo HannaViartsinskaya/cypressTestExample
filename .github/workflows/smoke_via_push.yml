@@ -32,8 +32,10 @@ jobs:
           npx cypress verify
       - name: Clean reports
         run: npm run clean:reports
+      - name: E2E tests
+        run: npm run cy:run
       - name: Generate HTML
-        run: npm run generate:report
+        run: npm run generate:report:o
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
