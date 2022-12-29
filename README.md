@@ -1,4 +1,7 @@
 # E2E testing
+In this suite you will find 2 feature files:
+- one sould be passed 
+- the 2nd one should be failed
 
 ## Documentation
 
@@ -9,5 +12,5 @@
 ## Running locally
 
 1. Run `npm ci` in the `./` directory (`<root>/e2e`),
-
-2. Run `npm run smoke` to start E2E (Cypress) tests against your local environment.
+2. Run `npm run cy:run` to start E2E (Cypress) tests.
+3. Run 'npm run generate:report' to generate reports.
