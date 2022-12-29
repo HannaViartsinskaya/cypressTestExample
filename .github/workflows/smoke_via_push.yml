@@ -33,7 +33,7 @@ jobs:
       - name: Clean reports
         run: npm run clean:reports
       - name: E2E tests
-        run: npm run smoke
+        run: npm run cy:run
       - name: Generate HTML
         run: npm run generate:report:without:e2e:exec
       - name: Upload test results
