@@ -9,10 +9,8 @@
     "cy:run:chrome": "cypress run --browser chrome",
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports",
     "clean": "npm run clean:reports",
-    "merge:reports:o": "mochawesome-merge cypress/reports/*.json > cypress/reports/full_report.json",
     "merge:reports": "npm run clean:reports; npm run cy:run; mochawesome-merge cypress/reports/*.json > cypress/reports/full_report.json",
     "report:copyScreenshots": "cp -r reports/screenshots cypress/reports/screenshots",
-    "generate:report:o": "npm run merge:reports:o; marge cypress/reports/full_report.json --reportDir cypress/reports --reportFilename full_report.html; npm run report:copyScreenshots",
     "generate:report": "npm run merge:reports; marge cypress/reports/full_report.json --reportDir cypress/reports --reportFilename full_report.html; npm run report:copyScreenshots"
   },
   "author": "hannanasi",
