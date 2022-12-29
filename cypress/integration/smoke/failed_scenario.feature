@@ -5,6 +5,6 @@ Feature: Verify basic elements on browserstack
 
     Scenario: User can see all basic elements on the Main page of Browserstack
         Then Browserstack logo is visible
-        And Header is present
+        And Header with text "Test" present
         And Product menu are present
         And Menu Links are  present

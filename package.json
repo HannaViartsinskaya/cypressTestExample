@@ -1,21 +1,26 @@
 {
-  "name": "untitled2",
+  "name": "Browserstack overview",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "create:html:report": "marge --reportDir testreport cypress/results/*.json",
-    "clean:reports": "rm -rf cypress/results/",
-    "smoke": "cypress run --config-file smoke.config.ts --headed"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --config-file smoke.config.ts --headed",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports",
+    "clean": "npm run clean:reports",
+    "merge:reports": "mochawesome-merge cypress/reports/*.json > cypress/reports/full_report.json",
+    "report:copyScreenshots": "cp -r reports/screenshots cypress/reports/screenshots",
+    "generate:report": "npm run merge:reports; marge cypress/reports/full_report.json --reportDir cypress/reports --reportFilename full_report.html; npm run report:copyScreenshots"
   },
-  "author": "",
+  "author": "hannanasi",
   "license": "ISC",
   "dependencies": {
     "@types/cypress-cucumber-preprocessor": "^4.0.1",
     "cucumber": "^6.0.7",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-real-events": "^1.7.6",
+    "mochawesome-report-generator": "^6.2.0",
     "save-dev": "^0.0.1-security"
   },
   "devDependencies": {

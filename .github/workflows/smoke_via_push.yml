@@ -33,12 +33,13 @@ jobs:
       - name: Clean reports
         run: npm run clean:reports
       - name: E2E tests
-        run: npm run smoke
+        run: npm run cy:run
       - name: Generate HTML
-        run: npm run create:html:report
+        if: always()
+        run: npm run generate:report
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: testreport
-          path: testreport/
+          path: cypress/reports/

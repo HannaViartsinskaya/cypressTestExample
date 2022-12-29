@@ -1,5 +1,4 @@
 import { defineConfig } from 'cypress';
-// let {defineConfig} = require('cypress')
 
 export const config: Cypress.ConfigOptions = {
   viewportWidth: 1920,
@@ -9,13 +8,14 @@ export const config: Cypress.ConfigOptions = {
   chromeWebSecurity: false,
   reporter: "mochawesome",
   reporterOptions: {
-    reportDir: "cypress/results",
+    reportDir:"cypress/reports",
+    reportFilename: "report",
     overwrite: false,
-    html: false,
+    html: true,
     json: true
   },
-  screenshotsFolder: 'results/screenshots',
-  video: false,
+  video: true,
+  screenshotsFolder: 'reports/screenshots',
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
